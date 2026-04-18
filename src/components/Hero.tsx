@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { FileText, Github, Play, ExternalLink } from 'lucide-react';
+import { FileText, Github } from 'lucide-react';
 import { Button } from './Common';
+import heroImage from '../lib/img/1.png';
 
 export const Hero = () => {
   return (
@@ -21,34 +22,40 @@ export const Hero = () => {
             An AI-based Robotic System for <br />
             <span className="text-gradient">Intelligent Automotive Painting</span>
           </h1>
-          
+
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-slate-600">
             <div className="flex flex-col">
-              <span className="font-semibold text-slate-900">Gabriele Tiboni¹</span>
-              <span className="text-xs opacity-60">Politecnico di Torino</span>
+              <span className="font-semibold text-slate-900">Nguyễn Đức Anh</span>
+              <span className="text-xs opacity-60">Leader</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-slate-900">Raffaello Camoriano¹,²</span>
-              <span className="text-xs opacity-60">IIT / Polito</span>
+              <span className="font-semibold text-slate-900">Nguyễn Ngọc Luân</span>
+              <span className="text-xs opacity-60">AI Enginerr</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-slate-900">Tatiana Tommasi¹</span>
-              <span className="text-xs opacity-60">Politecnico di Torino</span>
+              <span className="font-semibold text-slate-900">Phạm Hồng Phúc</span>
+              <span className="text-xs opacity-60">Software Engineer</span>
             </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
-            <Button variant="primary">
+            <Button
+              variant="primary"
+              href="https://www.overleaf.com/9627797921pqnbtbkntmhw#8ec094"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FileText size={18} />
-              Read Paper
+              Readpaper
             </Button>
-            <Button variant="secondary">
+            <Button
+              variant="secondary"
+              href="https://github.com/PhucPhamHong-dev/AutoPaint"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Github size={18} />
-              Code
-            </Button>
-            <Button variant="outline">
-              <Play size={18} />
-              Demo Video
+              GitHub
             </Button>
           </div>
         </motion.div>
@@ -61,11 +68,10 @@ export const Hero = () => {
           className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden glass-card p-2 group"
         >
           <div className="w-full bg-white rounded-2xl flex flex-col items-center justify-center relative overflow-hidden border border-slate-200">
-            <img 
-              src="https://picsum.photos/seed/industrial-robot-painting/1200/600" 
-              alt="AutoPaint AI Teaser" 
+            <img
+              src={heroImage}
+              alt="Real-world Validation"
               className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 text-left">

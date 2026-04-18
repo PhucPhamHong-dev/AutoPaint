@@ -7,7 +7,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Abstract } from './components/Abstract';
 import { Methodology } from './components/Methodology';
-import { InteractiveDemo } from './components/InteractiveDemo';
 import { DatasetOverview } from './components/DatasetOverview';
 import { Results } from './components/Results';
 import { Resources } from './components/Resources';
@@ -24,26 +23,22 @@ export default function App() {
       </div>
 
       <Navbar />
-      
+
       <main className="relative z-10">
         <Hero />
-        
+
         <div id="abstract">
           <Abstract />
         </div>
-        
+
         <div id="method">
           <Methodology />
-        </div>
-        
-        <div id="demo">
-          <InteractiveDemo />
         </div>
 
         <div id="dataset">
           <DatasetOverview />
         </div>
-        
+
         <div id="results">
           <Results />
         </div>
@@ -51,7 +46,7 @@ export default function App() {
         <div id="resources">
           <Resources />
         </div>
-        
+
         <div id="timeline">
           <Timeline />
         </div>

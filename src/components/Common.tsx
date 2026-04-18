@@ -13,8 +13,8 @@ interface SectionProps {
 
 export const Section = ({ id, className, children, title, subtitle, dark = false }: SectionProps) => {
   return (
-    <section 
-      id={id} 
+    <section
+      id={id}
       className={cn(
         "py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden",
         dark ? "bg-slate-100" : "bg-transparent",
@@ -25,7 +25,7 @@ export const Section = ({ id, className, children, title, subtitle, dark = false
         {(title || subtitle) && (
           <div className="mb-16 text-center">
             {title && (
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -35,7 +35,7 @@ export const Section = ({ id, className, children, title, subtitle, dark = false
               </motion.h2>
             )}
             {subtitle && (
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -53,7 +53,7 @@ export const Section = ({ id, className, children, title, subtitle, dark = false
   );
 };
 
-export const Card = ({ className, children, delay = 0, key }: { className?: string, children: React.ReactNode, delay?: number, key?: React.Key }) => (
+export const Card = ({ className, children, delay = 0, key }: { className?: string; children: React.ReactNode; delay?: number; key?: React.Key }) => (
   <motion.div
     key={key}
     initial={{ opacity: 0, y: 20 }}
@@ -66,27 +66,44 @@ export const Card = ({ className, children, delay = 0, key }: { className?: stri
   </motion.div>
 );
 
-export const Button = ({ 
-  className, 
-  variant = 'primary', 
-  children, 
-  ...props 
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'secondary' | 'outline' }) => {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: 'primary' | 'secondary' | 'outline';
+  href?: string;
+  target?: string;
+  rel?: string;
+};
+
+export const Button = ({
+  className,
+  variant = 'primary',
+  children,
+  href,
+  target,
+  rel,
+  ...props
+}: ButtonProps) => {
   const variants = {
     primary: "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20",
     secondary: "bg-slate-200 hover:bg-slate-300 text-slate-900",
     outline: "border border-slate-300 hover:bg-slate-50 text-slate-700"
   };
-  
+
+  const buttonClassName = cn(
+    "px-6 py-3 rounded-full font-medium transition-all active:scale-95 flex items-center gap-2 disabled:opacity-50",
+    variants[variant],
+    className
+  );
+
+  if (href) {
+    return (
+      <a className={buttonClassName} href={href} target={target} rel={rel}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <button 
-      className={cn(
-        "px-6 py-3 rounded-full font-medium transition-all active:scale-95 flex items-center gap-2 disabled:opacity-50",
-        variants[variant],
-        className
-      )}
-      {...props}
-    >
+    <button className={buttonClassName} {...props}>
       {children}
     </button>
   );

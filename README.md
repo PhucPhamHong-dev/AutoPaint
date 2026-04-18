@@ -1,20 +1,61 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img width="1200" height="475" alt="AutoPaint Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# AutoPaint
 
-This contains everything you need to run your app locally.
+Day la website gioi thieu project AutoPaint, duoc xay dung bang React, TypeScript va Vite.
 
-View your app in AI Studio: https://ai.studio/apps/f292dc57-14d3-4a8d-9d7e-2d24b923d4df
+## Cong nghe su dung
 
-## Run Locally
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+- Motion
 
-**Prerequisites:**  Node.js
+## Chay project o may local
 
+Yeu cau:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Node.js 18 tro len
+- npm
+
+Cai dependencies:
+
+```bash
+npm install
+```
+
+Chay moi truong development:
+
+```bash
+npm run dev
+```
+
+Sau khi chay, mo trinh duyet tai:
+
+```text
+http://localhost:3000
+```
+
+## Build production
+
+```bash
+npm run build
+```
+
+Neu muon xem ban build local:
+
+```bash
+npm run preview
+```
+
+## Cau truc thu muc chinh
+
+```text
+src/
+  components/   cac thanh phan giao dien
+  lib/          utils, asset, hinh anh
+```

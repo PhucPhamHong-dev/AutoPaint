@@ -46,57 +46,57 @@ export const Results = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-         <Card className="lg:col-span-2 p-0 overflow-hidden border-slate-200">
-            <div className="p-6 border-b border-slate-200 bg-slate-50/50">
-              <h4 className="font-bold text-slate-900">Quantitative Comparison (Table II)</h4>
+        <Card className="lg:col-span-2 p-0 overflow-hidden border-slate-200">
+          <div className="p-6 border-b border-slate-200 bg-slate-50/50">
+            <h4 className="font-bold text-slate-900">Quantitative Comparison (Table II)</h4>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-slate-50 text-slate-500 uppercase text-[10px] tracking-widest">
+                <tr>
+                  <th className="px-6 py-4">Method</th>
+                  <th className="px-6 py-4">Cuboids (PCD â†“)</th>
+                  <th className="px-6 py-4">Windows (Acc-NoP â†‘)</th>
+                  <th className="px-6 py-4">Shelves (PC â†‘)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="px-6 py-4 font-medium text-slate-900">Path-wise</td>
+                  <td className="px-6 py-4 text-slate-600">48.03</td>
+                  <td className="px-6 py-4 text-slate-600">73.4%</td>
+                  <td className="px-6 py-4 text-slate-600">70.7%</td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="px-6 py-4 font-medium text-slate-900">Point-wise</td>
+                  <td className="px-6 py-4 text-slate-600">6.76</td>
+                  <td className="px-6 py-4 text-slate-600">94.0%</td>
+                  <td className="px-6 py-4 text-slate-600">93.1%</td>
+                </tr>
+                <tr className="bg-blue-50 hover:bg-blue-100 transition-colors">
+                  <td className="px-6 py-4 font-bold text-blue-600">AutoPaint AI (Ours)</td>
+                  <td className="px-6 py-4 font-bold text-blue-600">6.52</td>
+                  <td className="px-6 py-4 font-bold text-blue-600">97.5%</td>
+                  <td className="px-6 py-4 font-bold text-blue-600">98.1%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </Card>
+
+        <Card className="p-8 flex flex-col justify-center bg-gradient-to-br from-blue-50 to-purple-50 border-slate-200">
+          <h4 className="text-xl font-bold mb-4 text-slate-900">Key Finding</h4>
+          <p className="text-slate-600 leading-relaxed italic">
+            "The joint prediction of path segments and masks allows the network to capture both local geometric patterns and global task requirements in a single forward pass, significantly reducing engineering overhead."
+          </p>
+          <div className="mt-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-slate-200 border border-slate-300" />
+            <div>
+              <p className="text-sm font-bold text-slate-900">Nguyễn Đức Anh</p>
+              <p className="text-xs text-slate-500">Leader</p>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-slate-50 text-slate-500 uppercase text-[10px] tracking-widest">
-                  <tr>
-                    <th className="px-6 py-4">Method</th>
-                    <th className="px-6 py-4">Cuboids (PCD ↓)</th>
-                    <th className="px-6 py-4">Windows (Acc-NoP ↑)</th>
-                    <th className="px-6 py-4">Shelves (PC ↑)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 font-medium text-slate-900">Path-wise</td>
-                    <td className="px-6 py-4 text-slate-600">48.03</td>
-                    <td className="px-6 py-4 text-slate-600">73.4%</td>
-                    <td className="px-6 py-4 text-slate-600">70.7%</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 font-medium text-slate-900">Point-wise</td>
-                    <td className="px-6 py-4 text-slate-600">6.76</td>
-                    <td className="px-6 py-4 text-slate-600">94.0%</td>
-                    <td className="px-6 py-4 text-slate-600">93.1%</td>
-                  </tr>
-                  <tr className="bg-blue-50 hover:bg-blue-100 transition-colors">
-                    <td className="px-6 py-4 font-bold text-blue-600">AutoPaint AI (Ours)</td>
-                    <td className="px-6 py-4 font-bold text-blue-600">6.52</td>
-                    <td className="px-6 py-4 font-bold text-blue-600">97.5%</td>
-                    <td className="px-6 py-4 font-bold text-blue-600">98.1%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-         </Card>
-         
-         <Card className="p-8 flex flex-col justify-center bg-gradient-to-br from-blue-50 to-purple-50 border-slate-200">
-            <h4 className="text-xl font-bold mb-4 text-slate-900">Key Finding</h4>
-            <p className="text-slate-600 leading-relaxed italic">
-              "The joint prediction of path segments and masks allows the network to capture both local geometric patterns and global task requirements in a single forward pass, significantly reducing engineering overhead."
-            </p>
-            <div className="mt-8 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-slate-200 border border-slate-300" />
-              <div>
-                <p className="text-sm font-bold text-slate-900">Gabriele Tiboni</p>
-                <p className="text-xs text-slate-500">Lead Researcher</p>
-              </div>
-            </div>
-         </Card>
+          </div>
+        </Card>
       </div>
       {/* Qualitative Comparison Gallery */}
       <div className="mt-24">
@@ -152,7 +152,7 @@ export const Results = () => {
             Our system was validated on a 6-DoF specialized painting robot, achieving expert-level quality on previously unseen object instances.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { title: "Input Point Cloud", seed: "pc-scan", desc: "Raw 3D scan of a window frame" },
@@ -161,8 +161,8 @@ export const Results = () => {
           ].map((item, i) => (
             <Card key={i} className="p-0 overflow-hidden border-slate-200 group" delay={i * 0.1}>
               <div className="aspect-video relative overflow-hidden bg-slate-100">
-                <img 
-                  src={`https://picsum.photos/seed/${item.seed}/800/450`} 
+                <img
+                  src={`https://picsum.photos/seed/${item.seed}/800/450`}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
