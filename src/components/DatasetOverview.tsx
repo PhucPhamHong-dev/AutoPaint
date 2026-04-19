@@ -1,7 +1,10 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { Box, Layout, Columns, Container, Info } from 'lucide-react';
+import { Box, Layout, Columns, Container } from 'lucide-react';
 import { Section, Card } from './Common';
+import cuboidImage from '../lib/img/4.png';
+import windowImage from '../lib/img/5.png';
+import shelvesImage from '../lib/img/6.png';
+import containerImage from '../lib/img/7.png';
 
 const categories = [
   {
@@ -11,7 +14,7 @@ const categories = [
     traits: ['Fixed number of paths', 'Limited shape diversity'],
     color: 'bg-blue-500',
     icon: <Box size={24} className="text-blue-600" />,
-    image: 'https://picsum.photos/seed/cuboid-3d/600/400'
+    image: cuboidImage
   },
   {
     id: 'Windows',
@@ -20,7 +23,7 @@ const categories = [
     traits: ['Varying number of paths', 'Limited path lengths'],
     color: 'bg-indigo-500',
     icon: <Layout size={24} className="text-indigo-600" />,
-    image: 'https://picsum.photos/seed/window-3d/600/400'
+    image: windowImage
   },
   {
     id: 'Shelves',
@@ -29,7 +32,7 @@ const categories = [
     traits: ['Varying number of paths', 'Convex + concave surfaces'],
     color: 'bg-purple-500',
     icon: <Columns size={24} className="text-purple-600" />,
-    image: 'https://picsum.photos/seed/shelf-3d/600/400'
+    image: shelvesImage
   },
   {
     id: 'Containers',
@@ -38,7 +41,7 @@ const categories = [
     traits: ['Real industrial scenario', 'High shape diversity'],
     color: 'bg-emerald-500',
     icon: <Container size={24} className="text-emerald-600" />,
-    image: 'https://picsum.photos/seed/container-3d/600/400'
+    image: containerImage
   }
 ];
 
@@ -49,11 +52,10 @@ export const DatasetOverview = () => {
         {categories.map((cat, i) => (
           <Card key={cat.id} delay={i * 0.1} className="p-0 overflow-hidden flex flex-col border-slate-200 group">
             <div className="aspect-[4/3] relative overflow-hidden bg-slate-100">
-              <img 
-                src={cat.image} 
-                alt={cat.title} 
+              <img
+                src={cat.image}
+                alt={cat.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
               <div className="absolute top-4 left-4">
@@ -77,21 +79,11 @@ export const DatasetOverview = () => {
                   </li>
                 ))}
               </ul>
-              <button 
-                className="mt-6 w-full py-2 rounded-lg border border-slate-100 bg-slate-50 text-[10px] font-bold uppercase tracking-widest text-slate-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all"
-                onClick={() => {
-                  const demoSection = document.getElementById('demo');
-                  if (demoSection) demoSection.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Test in Virtual Lab
-              </button>
             </div>
           </Card>
         ))}
       </div>
 
-      {/* Dataset Stats Summary */}
       <div className="mt-12 p-8 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-around gap-8">
         <div className="text-center">
           <p className="text-4xl font-bold text-blue-400 mb-1">3,088</p>

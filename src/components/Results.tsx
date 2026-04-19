@@ -1,6 +1,8 @@
-import { motion } from 'motion/react';
 import { Target, Clock, Bot, Award } from 'lucide-react';
 import { Section, Card } from './Common';
+import inputPointCloudImage from '../lib/img/8.png';
+import predictedTrajectoriesImage from '../lib/img/9.png';
+import realRobotExecutionImage from '../lib/img/10.png';
 
 const results = [
   {
@@ -29,6 +31,12 @@ const results = [
   }
 ];
 
+const validationItems = [
+  { title: "Input Point Cloud", image: inputPointCloudImage, desc: "Raw 3D scan of a window frame" },
+  { title: "Predicted Trajectories", image: predictedTrajectoriesImage, desc: "Generated 6-DoF waypoints" },
+  { title: "Real Robot Execution", image: realRobotExecutionImage, desc: "Efort GR-680 in action" }
+];
+
 export const Results = () => {
   return (
     <Section title="Experimental Results" subtitle="Our system outperforms traditional heuristics and baseline learning methods.">
@@ -55,9 +63,9 @@ export const Results = () => {
               <thead className="bg-slate-50 text-slate-500 uppercase text-[10px] tracking-widest">
                 <tr>
                   <th className="px-6 py-4">Method</th>
-                  <th className="px-6 py-4">Cuboids (PCD â†“)</th>
-                  <th className="px-6 py-4">Windows (Acc-NoP â†‘)</th>
-                  <th className="px-6 py-4">Shelves (PC â†‘)</th>
+                  <th className="px-6 py-4">Cuboids (PCD)</th>
+                  <th className="px-6 py-4">Windows (Acc-NoP)</th>
+                  <th className="px-6 py-4">Shelves (PC)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -98,52 +106,6 @@ export const Results = () => {
           </div>
         </Card>
       </div>
-      {/* Qualitative Comparison Gallery */}
-      <div className="mt-24">
-        <div className="mb-12 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-slate-900">Qualitative Comparison</h3>
-          <p className="text-slate-500 max-w-2xl mx-auto">
-            Visualizing the raw network predictions across different object categories compared to ground truth expert demonstrations.
-          </p>
-        </div>
-
-        <div className="space-y-8">
-          {[
-            { category: "Shelves", desc: "Complex concave geometry with multiple inner compartments." },
-            { category: "Windows", desc: "Thin structures requiring precise orientation control." },
-            { category: "Containers", desc: "Industrial-scale objects with heterogeneous surfaces." }
-          ].map((item, i) => (
-            <Card key={i} className="p-6 border-slate-200" delay={i * 0.1}>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                <div className="md:col-span-1">
-                  <h4 className="font-bold text-lg text-slate-900">{item.category}</h4>
-                  <p className="text-xs text-slate-500 mt-1">{item.desc}</p>
-                </div>
-                <div className="md:col-span-3 grid grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <div className="aspect-square bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-                      <img src={`https://picsum.photos/seed/input-${item.category}/400/400`} alt="Input" className="w-full h-full object-cover opacity-50" referrerPolicy="no-referrer" />
-                    </div>
-                    <p className="text-[10px] text-center font-bold text-slate-400 uppercase tracking-widest">Input PC</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="aspect-square bg-blue-50 rounded-xl overflow-hidden border border-blue-100">
-                      <img src={`https://picsum.photos/seed/ours-${item.category}/400/400`} alt="Ours" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    </div>
-                    <p className="text-[10px] text-center font-bold text-blue-600 uppercase tracking-widest">AutoPaint AI</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="aspect-square bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-                      <img src={`https://picsum.photos/seed/gt-${item.category}/400/400`} alt="GT" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    </div>
-                    <p className="text-[10px] text-center font-bold text-slate-400 uppercase tracking-widest">Ground Truth</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </div>
 
       <div className="mt-24">
         <div className="mb-12 text-center">
@@ -154,18 +116,13 @@ export const Results = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { title: "Input Point Cloud", seed: "pc-scan", desc: "Raw 3D scan of a window frame" },
-            { title: "Predicted Trajectories", seed: "robot-path", desc: "Generated 6-DoF waypoints" },
-            { title: "Real Robot Execution", seed: "robot-arm-painting", desc: "Efort GR-680 in action" }
-          ].map((item, i) => (
+          {validationItems.map((item, i) => (
             <Card key={i} className="p-0 overflow-hidden border-slate-200 group" delay={i * 0.1}>
-              <div className="aspect-video relative overflow-hidden bg-slate-100">
+              <div className="aspect-video relative overflow-hidden bg-white p-3">
                 <img
-                  src={`https://picsum.photos/seed/${item.seed}/800/450`}
+                  src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <p className="text-white text-sm font-medium">{item.desc}</p>

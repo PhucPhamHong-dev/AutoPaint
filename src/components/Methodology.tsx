@@ -1,6 +1,7 @@
-import { motion } from 'motion/react';
 import { Box, Layers, Scissors, MoveRight, Cpu, Database } from 'lucide-react';
 import { Section, Card } from './Common';
+import fig4Image from '../lib/img/2.png';
+import fig5Image from '../lib/img/3.png';
 
 const steps = [
   {
@@ -61,11 +62,10 @@ export const Methodology = () => {
             </h4>
           </div>
           <div className="aspect-video bg-white flex items-center justify-center relative">
-            <img 
-              src="https://picsum.photos/seed/deep-learning-pipeline/800/450" 
-              alt="Training Pipeline Architecture" 
+            <img
+              src={fig4Image}
+              alt="Training Pipeline Architecture"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              referrerPolicy="no-referrer"
             />
           </div>
           <div className="p-6">
@@ -79,15 +79,14 @@ export const Methodology = () => {
           <div className="p-6 border-b border-slate-200 bg-slate-50/50">
             <h4 className="font-bold flex items-center gap-2 text-slate-900">
               <Layers size={18} className="text-purple-600" />
-              Post-processing (Fig. 6)
+              Post-processing (Fig. 5)
             </h4>
           </div>
           <div className="aspect-video bg-white flex items-center justify-center relative">
-            <img 
-              src="https://picsum.photos/seed/3d-point-cloud-processing/800/450" 
-              alt="Post-processing Pipeline" 
+            <img
+              src={fig5Image}
+              alt="Post-processing Pipeline"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              referrerPolicy="no-referrer"
             />
           </div>
           <div className="p-6">
