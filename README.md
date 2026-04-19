@@ -1,7 +1,3 @@
-<div align="center">
-  <img width="1200" height="475" alt="AutoPaint Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
 # AutoPaint
 
 Day la website gioi thieu project AutoPaint, duoc xay dung bang React, TypeScript va Vite.
