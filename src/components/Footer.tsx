@@ -4,7 +4,7 @@ import { Card } from './Common';
 export const Footer = () => {
   const citation = `@misc{autopaint2026,
   title={AutoPaint},
-  author={Nguyen Duc Anh and Nguyen Ngoc Luan and Pham Hong Phuc},
+  author={Nguyen Duc Anh and Nguyen Thanh Luan and Pham Hong Phuc},
   year={2026},
   howpublished={\\url{https://github.com/PhucPhamHong-dev/AutoPaint}}
 }`;
@@ -21,7 +21,7 @@ export const Footer = () => {
               AutoPaint AI
             </h3>
             <p className="text-slate-500 max-w-md mb-8 leading-relaxed">
-              Project team: Nguyen Duc Anh (Leader), Nguyen Ngoc Luan (AI Enginerr), and Pham Hong Phuc (Software Engineer).
+              Project team: Nguyen Duc Anh (Leader), Nguyen Thanh Luan (AI Engineer), and Pham Hong Phuc (Software Engineer).
             </p>
             <div className="flex gap-4">
               <a
