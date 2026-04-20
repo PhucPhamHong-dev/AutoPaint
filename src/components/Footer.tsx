@@ -33,7 +33,7 @@ export const Footer = () => {
                 <Github size={20} />
               </a>
               <a
-                href="https://www.overleaf.com/9627797921pqnbtbkntmhw#8ec094"
+                href="https://drive.google.com/file/d/1YTXW4xpGVNz6xk13bEYRDiZUJ1l_SY-X/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 rounded-xl bg-slate-200 hover:bg-slate-300 transition-colors text-slate-600 hover:text-slate-900"
