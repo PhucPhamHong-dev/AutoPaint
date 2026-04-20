@@ -29,8 +29,8 @@ export const Hero = () => {
               <span className="text-xs opacity-60">Leader</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-slate-900">Nguyễn Ngọc Luân</span>
-              <span className="text-xs opacity-60">AI Enginerr</span>
+              <span className="font-semibold text-slate-900">Nguyễn Thành Luân</span>
+              <span className="text-xs opacity-60">AI Engineer</span>
             </div>
             <div className="flex flex-col">
               <span className="font-semibold text-slate-900">Phạm Hồng Phúc</span>
@@ -41,7 +41,7 @@ export const Hero = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Button
               variant="primary"
-              href="https://www.overleaf.com/9627797921pqnbtbkntmhw#8ec094"
+              href="https://drive.google.com/file/d/1YTXW4xpGVNz6xk13bEYRDiZUJ1l_SY-X/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
